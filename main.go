@@ -232,12 +232,12 @@ func main() {
 	os.Setenv("PexelsToken", "PfkIV9WjuLjqLVSYLC83Pmyuq9V8KwMmelDWYMHSCUUJ4846oNPZ35UK")
 	var TOKEN = os.Getenv("PexelsToken")
 	var c = NewClient(TOKEN)
-	result, err := c.GetRandomVideo() //("waves", 15, 1)
+	result, err := c.SearchPhotos("waves", 15, 1)
 	if err != nil {
 		fmt.Errorf("search error: %v", err)
 	}
-	/*if result.Page == 0 {
+	if result.Page == 0 {
 		fmt.Errorf("search result wrong")
-	}*/
+	}
 	fmt.Println(result)
 }
